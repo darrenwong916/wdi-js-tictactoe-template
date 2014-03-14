@@ -2,13 +2,46 @@
 <html ng-app>
 <head>
   <title>TictactoeProject</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.min.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+    {{message}}
+    <form>
+      <input type="text" ng-model="newEntry.name">
+    </form>
+    {{newEntry.name}}
+     <div id="game">
+       <ul id="teams">
+        <li>
+          <img src="/img/bert.jpg">
+          <h2>Team <span class="team"></span></h2>
+          <h3 class="player"></h3>
+        </li>
+        <li>
+          <img src="/img/ernie.jpg">
+          <h2>Team <span class="team"></span></h2>
+          <h3 class="player"></h3>
+        </li>
+      </ul>
+      <div id="board" ng-repeat="">
+        <td class="tile">
+          <tr>
+          </tr>
+        </td>
+      </div>
+      <div id="results">
+        <h1></h1>
+        <span class="image"></span>
+        <button>play again</button>
+      </div>
+    </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="js/underscore.min.js"></script>
+  <script src="js/tictactoe.js.coffee"></script>
 
 </body>
 </html>
